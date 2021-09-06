@@ -1,19 +1,19 @@
 # Membuat Development Environment Pribadi dengan VSCode dan Google Cloud
 ## Table of Content
 1. Apa itu Development Environment
-1. Cara Membuat Development Environment Pribadi
+2. Cara Membuat Development Environment Pribadi
     - Pada Komputer Pribadi
     - Pada Komputasi Awan
         - Apa itu Cloud Shell
         - Cara Menggunakan Cloud Shell
         - Cara Menginterasikan Cloud Shell
-1. Additional - Simple Coding with Database Initialization
-1. Warning - Limitasi Cloud Shell
-1. Referensi
+3. Additional - Simple Coding with Database Initialization
+4. Warning - Limitasi Cloud Shell
+5. Referensi
 
 ### Apa itu Development Environment
 Mengutip dari techopedia, Development Environment adalah kumpulan dari   
-prosedur dan alat alat yang digunakan untuk mengembangkan aplikasi.
+prosedur dan alat-alat yang digunakan untuk mengembangkan aplikasi.
 
 Nah, setelah mengetahui arti dari `development environment`, bagaimana  
 cara kita secara umumnya dalam membuat `development environment` pribadi?
@@ -29,12 +29,12 @@ cukup canggih, misalnya: Komputer dengan spesifikasi yang cukup canggih
 Nah, bagaimanakah cara kita melakukannya?
 
 #### Pada Komputer Pribadi
-Dalam kondisi yang sempurna ini, dimana seseorang memiliki komputer yang cukup  
+Dalam kondisi yang sempurna ini, di mana seseorang memiliki komputer yang cukup  
 canggih, maka membuat development environment ini caranya cukup mudah:
 - Memasang Sistem Operasi yang dibutuhkan untuk men-develop aplikasi  
   (mis. Windows 10)
 - Memasang IDE / Text Editor dan Tools lainnya
-- Memasang Runtime yang dibutuhkan agar dapat menjalankan aplikasi (mis. nodejs)
+- Memasang Runtime yang dibutuhkan agar dapat menjalankan aplikasi (mis. Node.js)
 - Mengatur `Environment Variable` atau `Path` yang dibutuhkan agar dapat  
   menjalankan runtime / aplikasi yang dibutuhkan
 - Memasang Database Server apabila dibutuhkan (mis MySQL / PostgreSQL server)
@@ -47,7 +47,7 @@ spesifikasi yang canggih untuk bisa membuat development environment pribadi
 yang sesuai dengan kondisi di atas bukan?
 
 Sebagai contoh saja:
-- Membuka VSCode yang memiliki aplikasi nodejs dengan menggunakan database  
+- Membuka VSCode yang memiliki aplikasi Node.js dengan menggunakan database  
   PostgreSQL dengan Client Database bernama pgAdmin4 dengan membuka browser  
   Chrome sebanyak 5 s.d. 8 Tab saja pada Sistem Operasi Windows 10, sudah  
   membutuhkan RAM lebih dari 4 GB.
@@ -58,9 +58,10 @@ digunakan tidak cukup canggih?
 
 #### Pada Komputasi Awan
 
-Masalah di atas sebenarnya dapat diselesaikan dengan caram emindahkan 
+Masalah di atas sebenarnya dapat diselesaikan dengan cara memindahkan 
 sebagian load yang dimiliki pada komputer pribadi yang digunakan menuju  
-komputasi awan (Cloud), sehingga kita tetap dapat men-develop aplikasi pada   komputer pribadi walaupun komputer kita memiliki spesifikasi yang *KENTANG*.
+komputasi awan (Cloud), sehingga kita tetap dapat men-develop aplikasi pada
+komputer pribadi walaupun komputer kita memiliki spesifikasi yang *KENTANG*.
 
 Adapun solusi yang disediakan perusahaan besar penyedia *cloud* adalah:
 - Codespaces by Github (Beta, Invitation Only, nantinya akan berbayar)
@@ -80,11 +81,15 @@ yang disediakan oleh Google Cloud Platform (GCP) dengan VSCode yang ada pada
 komputer pribadi.
 
 ##### Apa itu Cloud Shell
-Sebelum mengetahui apa itu Cloud Shell dan Editornya, ada baiknya kita mengetahui apa itu GCP terlebih dahulu.
+Sebelum mengetahui apa itu Cloud Shell dan Editornya, ada baiknya kita mengetahui 
+apa itu GCP terlebih dahulu.
 
-GCP adalah layanan penyedia cloud computing yang berasal dari perusahaan aplikasi mesin pencari yang besar di dunia, Google.
+GCP adalah layanan penyedia cloud computing yang berasal dari perusahaan aplikasi 
+mesin pencari yang besar di dunia, Google.
 
-Cloud Shell, menurut GCP sendiri, adalah sebuah mesin administrasi yang dikurasikan oleh Google sendiri yang memiliki akses terhadap sumber daya GCP yang powerful, aman secara default, dengan berbagai macam tools yang telah disediakan dan siap untuk digunakkan.
+Cloud Shell, menurut GCP sendiri, adalah sebuah mesin administrasi yang dikurasikan 
+oleh Google sendiri yang memiliki akses terhadap sumber daya GCP yang powerful, 
+aman secara default, dengan berbagai macam tools yang telah disediakan dan siap untuk digunakkan.
 
 Secara sederhananya, dari kacamata developer, Cloud Shell adalah
 
@@ -327,14 +332,14 @@ docker-compose untuk membuat PostgreSQL dengan mudah.
 
 Langkah-langkah untuk mendevelop aplikasi nodejs dengan database PostgreSQL:
 1. Pastikan sudah login dan berhasil masuk ke dalam cloud-shell pada VSCode.
-1. Buka terminal pada VSCode (`Terminal -> New Terminal`).
-1. Pada terminal tersebut, masukkan perintah `mkdir workspaces` untuk membuat  
+2. Buka terminal pada VSCode (`Terminal -> New Terminal`).
+3. Pada terminal tersebut, masukkan perintah `mkdir workspaces` untuk membuat  
    folder bernama `workspaces`.
-1. Pada VSCode, pilih `File -> Open Folder`, kemudian pilih folder yang baru  
+4. Pada VSCode, pilih `File -> Open Folder`, kemudian pilih folder yang baru  
    saja dibuat tadi (`/home/gclouduser/workspaces`).
-1. Buatlah sebuah file baru dengan nama `docker-compose.yml` pada folder  
+5. Buatlah sebuah file baru dengan nama `docker-compose.yml` pada folder  
    `workspaces`.
-1. Pada file tersebut, tuliskan konten sebagai berikut:
+6. Pada file tersebut, tuliskan konten sebagai berikut:
     ```yaml
     version: '3.1'
 
@@ -350,37 +355,37 @@ Langkah-langkah untuk mendevelop aplikasi nodejs dengan database PostgreSQL:
         ports:
           - 8081:8080
     ```
-1. Kemudian selanjutnya kita akan menjalankan docker-compose dengan   
+7. Kemudian selanjutnya kita akan menjalankan docker-compose dengan   
    mengetikkan perintah `docker-compose up -d`.
-1. Pada tahap ini, sebenarnya kita sudah berhasil menjalankan postgresql pada  
+8. Pada tahap ini, sebenarnya kita sudah berhasil menjalankan postgresql pada  
    port 5432 dan adminer pada port 8081, di cloud-shell, selanjutnya kita akan  
    melakukan `port forwarding` agar dapat mengakses halaman adminer pada  
    browser yang kita gunakan.
-1. Pada VSCode, di bagian Terminal, ada klik tab dengan nama `Ports` kemudian  
+9. Pada VSCode, di bagian Terminal, ada klik tab dengan nama `Ports` kemudian  
    tekan tombol `Forward a Port`
    ![image10](/assets/image10.png)
-1. Pada kolom pertama, ketik `8081`, kemudian tekan `Enter`. `8081` merupakan  
+10. Pada kolom pertama, ketik `8081`, kemudian tekan `Enter`. `8081` merupakan  
    port `Adminer` (Adminer adalah client db yang dapat diakses pada browser)
-1. Setelah ini, kita akan membuka browser, kemudian masukkan alamat url  
+11. Setelah ini, kita akan membuka browser, kemudian masukkan alamat url  
    `http://localhost:8081/`, maka akan muncul halaman utama adminer.
 
-Sampai pada tahap ini artinya kita sudah berhasil mengkoneksikan  
+Sampai pada tahap ini artinya kita sudah berhasil mengoneksikan  
 infrastruktur pada GCP dan bisa diakses dengan `localhost` pada   
 komputer pribadi, menakjubkan bukan?
 
-Langkah selanjutnya adalah sekarang kita akan membuat aplikasi berbasis nodejs  
+Langkah selanjutnya adalah sekarang kita akan membuat aplikasi berbasis Node.js  
 yang kemudian akan ditampilkan pada browser kita juga selayaknya localhost !
 
 1. Buatlah sebuah file dengan nama `app.js` pada folder `workspaces`.
-1. Pada VSCode, pilih tab `Terminal` kemudian ketik perintah   
+2. Pada VSCode, pilih tab `Terminal` kemudian ketik perintah   
    `nvm install lts/fermium && nvm use lts/fermium`.
-1. Perintah ini digunakan untuk menginstall nodejs dengan versi LTS terbaru  
+3. Perintah ini digunakan untuk menginstall nodejs dengan versi LTS terbaru  
    pada cloud-shell (pada saat tulisan ini dibuat, nodejs LTS terbaru adalah  
    `lts/fermium`, sesuaikan dengan kondisi pada saat mencoba tulisan ini yah !).
-1. Ketik perintah `npm init -y` untuk membuat file `package.json`
-1. Ketik perintah `npm install express && npm i -D nodemon` 
+4. Ketik perintah `npm init -y` untuk membuat file `package.json`
+5. Ketik perintah `npm install express && npm i -D nodemon` 
    untuk menginstall express pada folder project berada.
-1. Pada file `app.js` ketiklah kode berikut:
+6. Pada file `app.js` ketiklah kode berikut:
     ```javascript
     const express = require('express');
     const app = express();
@@ -398,12 +403,12 @@ yang kemudian akan ditampilkan pada browser kita juga selayaknya localhost !
 
     app.listen(port, _ => console.log(`Apps bekerja pada port ${port}`));
     ```
-1. Pada terminal, ketik perintah `npx nodemon app.js` untuk menjalankan
+7. Pada terminal, ketik perintah `npx nodemon app.js` untuk menjalankan
    aplikasi
-1. Buka tab `Ports`, kemudian tambahkan sebuah port baru yaitu `10000`.
-1. Bukalah pada browser `http://localhost:10000/` dan lihatlah hasilnya.
+8. Buka tab `Ports`, kemudian tambahkan sebuah port baru yaitu `10000`.
+9. Bukalah pada browser `http://localhost:10000/` dan lihatlah hasilnya.
 
-Selamat sampai di sini kita sudah berhasil membuat aplikasi nodejs sederhana  
+Selamat sampai di sini kita sudah berhasil membuat aplikasi Node.js sederhana  
 dan berhasil mengakses PostgreSQL pada cloud-shell !
 
 🔥🔥🔥 Happy Developing !!! 🔥🔥🔥
