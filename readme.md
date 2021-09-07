@@ -192,7 +192,7 @@ Setelah melakukan login, kita sudah boleh menutup browser tersebut
 
 **Langkah Kedua**  
 Setelah login, langkah selanjutnya adalah kita mencoba untuk masuk ke dalam  
-cloud-shell yang ada pada akun GCP.
+Cloud Shell yang ada pada akun GCP.
 
 Hal ini dapat dilakukan dengan mengetikkan perintah
 
@@ -206,17 +206,17 @@ membuat beberapa file pada `$HOME/.config/ssh/`, jawablah dengan `(Y)es`.
 - Pada Linux dan Mac OS, lokasinya adalah `/home/USERNAME/.config/ssh/`
 
 Setelah langkah ini dilakukan, pada Linux dan Mac OS, akan langsung masuk ke  
-terminal di mana cloud-shell tersebut berada, sedangkan pada Windows, akan  
-membuka sebuah aplikasi PuTTY dan meminta ijin untuk mengakses cloud-shell,   
+terminal di mana Cloud Shell tersebut berada, sedangkan pada Windows, akan  
+membuka sebuah aplikasi PuTTY dan meminta ijin untuk mengakses Cloud Shell,   
 jawab dengan `(Y)es`.
 
 Sampai pada langkah ini artinya kita sudah berhasil masuk ke dalam  
-cloud-shell, namun diaksesnya benar-benar dari komputer kita pribadi.
+Cloud Shell, namun diaksesnya benar-benar dari komputer kita pribadi.
 
-Ketik perintah `exit` untuk keluar dari cloud-shell.
+Ketik perintah `exit` untuk keluar dari Cloud Shell.
 
 **Langkah Ketiga**  
-Setelah berhasil masuk ke dalam cloud-shell dan sudah keluar dari cloud-shell,  
+Setelah berhasil masuk ke dalam Cloud Shell dan sudah keluar dari Cloud Shell,  
 Maka sekarang kita akan membuka VSCode pada komputer kita, kemudian kita akan  
 memasang sebuah extension pada VSCode yang bernama `Remote - SSH`.
 
@@ -231,10 +231,10 @@ Langkah untuk memasang extension ini adalah sebagai berikut:
   ![image4](/assets/image4.png) 
 
 Sampai pada tahap ini artinya kita sudah siap untuk melakukan koneksi secara  
-remote ke cloud-shell dengan menggunakan SSH.
+remote ke Cloud Shell dengan menggunakan SSH.
 
 **Langkah Keempat**  
-Pada langkah ini kita akan mulai untuk mengkoneksikan VSCode ke cloud-shell.
+Pada langkah ini kita akan mulai untuk mengkoneksikan VSCode ke Cloud Shell.
 
 Langkah untuk mengkoneksikan VSCode ke cloud-shell adalah sebagai berikut:
 - Pada VSCode, pilih `Terminal` -> `New Terminal`
@@ -242,7 +242,7 @@ Langkah untuk mengkoneksikan VSCode ke cloud-shell adalah sebagai berikut:
   sebelah tombol `+`, kemudian pilih `Command Prompt`
   ![image5](/assets/image5.png)
 - Selanjutnya kita akan mengetikkan perintah untuk mendapatkan alamat ip dari  
-  cloud-shell agar bisa kita remote ssh. (alamat ip ini berupa angka yang  
+  Cloud Shell agar bisa kita remote ssh. (alamat ip ini berupa angka yang  
   terpisah menjadi 4 bagian, misalnya 30.100.250.50).   
   Perintah untuk melakukan langkah ini adalah:  
   ```shell
@@ -290,10 +290,10 @@ Langkah untuk mengkoneksikan VSCode ke cloud-shell adalah sebagai berikut:
   paling atas saja.
 - Kemudian setelah berhasil, maka di kanan bawah VSCode akan muncul notifikasi  
   bahwa koneksi SSH telah berhasil ditambahkan, kemudian kita tinggal menekan  
-  tombol `Connect` untuk mengkoneksikan ke cloud-shell.  
+  tombol `Connect` untuk mengkoneksikan ke Cloud Shell.  
  ![image8](/assets/image8.png)
 - Selanjutnya akan terbuka sebuah VSCode yang baru yang akan mengkoneksikan  
-  ke cloud-shell.
+  ke Cloud Shell.
     - Pada Windows, apabila pertama kali menggunakan Remote SSH ini, maka akan  
       muncul notifikasi Windows Defender Firewall berusaha memblokir access  
       VSCode, pilih enable saja, kemudian pada command pallete akan muncul  
@@ -302,16 +302,16 @@ Langkah untuk mengkoneksikan VSCode ke cloud-shell adalah sebagai berikut:
       ![image9](/assets/image9.png)
     - Pada Linux dan Mac OS, tidak ada notifikasi ini.
 
-Sampai pada tahap ini, artinya kita sudah mengkoneksikan VSCode ke cloud-shell.
+Sampai pada tahap ini, artinya kita sudah mengkoneksikan VSCode ke Cloud Shell.
 
 Hal ini bisa dilihat pada bagian kiri bawah VSCode, icon hijau tadi sudah   
 berubah dan ada informasi tambahan dengan nama `SSH - xx.xxx.xxx.xxx`.
 
 Selain itu juga pada saat membuka terminal, yang terbuka bukan terminal yang  
-ada pada komputer kita lagi, melainkan terminal yang terbuka di cloud-shell.
+ada pada komputer kita lagi, melainkan terminal yang terbuka di Cloud Shell.
 
 Dan pada saat membuka folder (`Open Folder`), maka akan muncul folder yang  
-terdapat pada cloud-shell, tidak ada pada komputer kita.
+terdapat pada Cloud Shell, tidak ada pada komputer kita.
 
 Maka sampai di titik ini kita mulai harus menggunakan git dan lain lain agar  
 dapat menyimpan kode yang kita buat dalam mengembangkan aplikasi.
@@ -319,7 +319,7 @@ dapat menyimpan kode yang kita buat dalam mengembangkan aplikasi.
 🔥🔥🔥 Selamat memulai membuat aplikasi ! 🔥🔥🔥
 
 ```markdown
-Apabila sudah selesai dan ingin menutup koneksi ke cloud-shell, kita tinggal  
+Apabila sudah selesai dan ingin menutup koneksi ke Cloud Shell, kita tinggal  
 menekan tombol hijau di kiri bawah, kemudian memilih `Close Remote Connection`
 ```
 
@@ -327,17 +327,17 @@ menekan tombol hijau di kiri bawah, kemudian memilih `Close Remote Connection`
 Sekarang kita akan mencoba untuk membuat aplikasi nodejs yang menggunakan  
 database PostgreSQL dan keseluruhan dari aplikasi ini bisa diakses pada   
 browser, namun sebenarnya, keseluruhan infrastruktur yang digunakan untuk  
-men-develop aplikasi ini seluruhnya ada pada cloud-shell.
+men-develop aplikasi ini seluruhnya ada pada Cloud Shell.
 
-Dikarenakan pada cloud-shell ini awalnya tidak memiliki PostgreSQL, maka   
+Dikarenakan pada Cloud Shell ini awalnya tidak memiliki PostgreSQL, maka   
 seharusnya kita akan menginstall PostgreSQL, kemudian menggunakannya.
 
-Tapi karena kita menggunakan cloud-shell, dan pada cloud-shell ini sudah  
+Tapi karena kita menggunakan Cloud Shell, dan pada Cloud Shell ini sudah  
 terpasang docker dengan docker-compose, maka kita bisa saja menggunakan  
 docker-compose untuk membuat PostgreSQL dengan mudah.
 
 Langkah-langkah untuk mendevelop aplikasi nodejs dengan database PostgreSQL:
-1. Pastikan sudah login dan berhasil masuk ke dalam cloud-shell pada VSCode.
+1. Pastikan sudah login dan berhasil masuk ke dalam Cloud Shell pada VSCode.
 2. Buka terminal pada VSCode (`Terminal -> New Terminal`).
 3. Pada terminal tersebut, masukkan perintah `mkdir workspaces` untuk membuat  
    folder bernama `workspaces`.
@@ -364,7 +364,7 @@ Langkah-langkah untuk mendevelop aplikasi nodejs dengan database PostgreSQL:
 7. Kemudian selanjutnya kita akan menjalankan docker-compose dengan   
    mengetikkan perintah `docker-compose up -d`.
 8. Pada tahap ini, sebenarnya kita sudah berhasil menjalankan postgresql pada  
-   port 5432 dan adminer pada port 8081, di cloud-shell, selanjutnya kita akan  
+   port 5432 dan adminer pada port 8081, di Cloud Shell, selanjutnya kita akan  
    melakukan `port forwarding` agar dapat mengakses halaman adminer pada  
    browser yang kita gunakan.
 9. Pada VSCode, di bagian Terminal, ada klik tab dengan nama `Ports` kemudian  
@@ -386,7 +386,7 @@ yang kemudian akan ditampilkan pada browser kita juga selayaknya localhost !
 2. Pada VSCode, pilih tab `Terminal` kemudian ketik perintah   
    `nvm install lts/fermium && nvm use lts/fermium`.
 3. Perintah ini digunakan untuk menginstall nodejs dengan versi LTS terbaru  
-   pada cloud-shell (pada saat tulisan ini dibuat, nodejs LTS terbaru adalah  
+   pada Cloud Shell (pada saat tulisan ini dibuat, nodejs LTS terbaru adalah  
    `lts/fermium`, sesuaikan dengan kondisi pada saat mencoba tulisan ini yah !).
 4. Ketik perintah `npm init -y` untuk membuat file `package.json`
 5. Ketik perintah `npm install express && npm i -D nodemon`  
@@ -415,7 +415,7 @@ yang kemudian akan ditampilkan pada browser kita juga selayaknya localhost !
 9. Bukalah pada browser `http://localhost:10000/` dan lihatlah hasilnya.
 
 Selamat sampai di sini kita sudah berhasil membuat aplikasi Node.js sederhana  
-dan berhasil mengakses PostgreSQL pada cloud-shell !
+dan berhasil mengakses PostgreSQL pada Cloud Shell !
 
 🔥🔥🔥 Happy Developing !!! 🔥🔥🔥
 
